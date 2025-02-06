@@ -6,7 +6,7 @@ Let's create our own counter cubit
 
 */
 
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CounterCubit extends Cubit<int> {
   //  constructor: get initial state
