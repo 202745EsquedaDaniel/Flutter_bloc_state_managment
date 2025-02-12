@@ -20,7 +20,21 @@ class CounterPage extends StatelessWidget {
       create: (context) => CounterCubit(0),
 
       //  Counter View (UI)
-      child: CounterView(),
+      child: BlocListener<CounterCubit, int>(
+        listener: (context, state) {
+          //  show pop up box when it reaches 10
+          if (state == 10) {
+            showDialog(
+              context: context,
+              builder:
+                  (context) => AlertDialog(
+                    content: Text("10 reached!"), //
+                  ),
+            );
+          }
+        },
+        child: const CounterView(),
+      ),
     );
   }
 }

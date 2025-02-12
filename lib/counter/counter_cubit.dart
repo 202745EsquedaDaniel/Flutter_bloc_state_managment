@@ -17,4 +17,13 @@ class CounterCubit extends Cubit<int> {
 
   //  decrement
   void decrement() => emit(state - 1);
+
+  // on state change -> do something
+  @override
+  void onChange(Change<int> change) {
+    //  TODO: implement onChange
+    super.onChange(change);
+
+    print(change);
+  }
 }
